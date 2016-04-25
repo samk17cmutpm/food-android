@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity
                 );
                 hotelsPresenter = new HotelsPresenter((HotelsContract.View) fragment);
                 break;
-            
+
         }
 
     }

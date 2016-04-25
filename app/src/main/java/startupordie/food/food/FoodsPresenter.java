@@ -2,16 +2,21 @@ package startupordie.food.food;
 
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import startupordie.food.data.Food;
+
 /**
  * Created by samnguyen on 24/04/2016.
  */
 public class FoodsPresenter implements FoodsContract.Presenter {
 
-    private final FoodsContract.View mFoodView;
+    private final FoodsContract.View foodsView;
 
     public FoodsPresenter(FoodsContract.View foodsView) {
-        mFoodView = foodsView;
-        mFoodView.setPrensenter(this);
+        this.foodsView = foodsView;
+        this.foodsView.setPrensenter(this);
     }
 
 
@@ -23,7 +28,11 @@ public class FoodsPresenter implements FoodsContract.Presenter {
 
     @Override
     public void loadFoods(boolean forceUpdate) {
-
+        List<Food> foods = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            foods.add(new Food(i + " Novahub Studio"));
+        }
+        foodsView.showFoods(foods);
     }
 
     @Override
@@ -32,6 +41,6 @@ public class FoodsPresenter implements FoodsContract.Presenter {
     }
 
     private void loadFoodsTemp() {
-        Log.d("TESTING", "Start Food Fragment");
+        foodsView.setLoadingIndicator(true);
     }
 }
