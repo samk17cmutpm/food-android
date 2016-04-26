@@ -10,18 +10,25 @@ import startupordie.food.data.Food;
  * Created by samnguyen on 24/04/2016.
  */
 public interface FoodsContract {
+
     interface View extends BaseView<Presenter> {
 
-        void setLoadingIndicator(boolean active);
-
-        void showFoods(List<Food> foods);
+        void showViewPager();
     }
 
     interface Presenter extends BasePrensenter {
 
-        void result(int requestCode, int resultCode);
+        void loadViewPager();
 
-        void loadFoods(boolean forceUpdate);
+    }
 
+    interface FoodsMostPopularView extends BaseView<FoodsMostPopularPresenter> {
+
+        void showData(List<Food> foods);
+    }
+
+    interface FoodsMostPopularPresenter extends BasePrensenter {
+
+        void loadFoodsMostPopularData();
     }
 }

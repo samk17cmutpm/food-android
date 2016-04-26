@@ -26,6 +26,8 @@ public class FoodsFragment extends Fragment implements FoodsContract.View{
 
     private FoodsViewModel foodsViewModel;
 
+    private View root;
+
 //    private RecyclerView recyclerView;
 //    private RecyclerView.Adapter foodsAdapter;
 //    private RecyclerView.LayoutManager layoutManager;
@@ -43,12 +45,18 @@ public class FoodsFragment extends Fragment implements FoodsContract.View{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_foods, container, false);
+        root = inflater.inflate(R.layout.fragment_foods, container, false);
 //        recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
 //        recyclerView.setHasFixedSize(true);
 //        layoutManager = new LinearLayoutManager(getContext());
 //        recyclerView.setLayoutManager(layoutManager);
-        presenter.loadFoods(true);
+        presenter.loadViewPager();
+        return root;
+    }
+    @Override
+    public void showViewPager() {
+//        foodsAdapter = new FoodsAdapter(foods);
+//        recyclerView.setAdapter(foodsAdapter);
         ViewPager viewPager = (ViewPager) root.findViewById(R.id.viewpager);
         viewPager.setAdapter(new FoodsPagerAdapter(getFragmentManager()));
 
@@ -56,19 +64,6 @@ public class FoodsFragment extends Fragment implements FoodsContract.View{
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) root.findViewById(R.id.tabs);
         // Attach the view pager to the tab strip
         tabsStrip.setViewPager(viewPager);
-        return root;
-    }
-
-    @Override
-    public void setLoadingIndicator(boolean active) {
-        Log.d("====>", "====>");
-
-    }
-
-    @Override
-    public void showFoods(List<Food> foods) {
-//        foodsAdapter = new FoodsAdapter(foods);
-//        recyclerView.setAdapter(foodsAdapter);
     }
 
     @Override
