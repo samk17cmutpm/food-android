@@ -2,12 +2,9 @@ package startupordie.food.lib;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.SparseArray;
 import android.view.ViewGroup;
-
-import startupordie.food.food.FoodsCasesFragment;
 
 /**
  * Created by samnguyen on 25/04/2016.

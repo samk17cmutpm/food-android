@@ -22,13 +22,21 @@ public interface FoodsContract {
 
     }
 
-    interface FoodsMostPopularView extends BaseView<FoodsMostPopularPresenter> {
+    interface FoodsMostPopularView extends BaseView<FoodsMostPopularBasePresenter> {
 
         void showData(List<Food> foods);
     }
 
-    interface FoodsMostPopularPresenter extends BasePrensenter {
+    interface FoodsMostPopularBasePresenter extends BasePrensenter {
 
         void loadFoodsMostPopularData();
+    }
+
+    interface FoodsNearestView extends BaseView<FoodsNearestBasePresenter> {
+        void showData(List<Food> foods);
+    }
+
+    interface FoodsNearestBasePresenter extends BasePrensenter {
+        void loadFoodsNearest();
     }
 }

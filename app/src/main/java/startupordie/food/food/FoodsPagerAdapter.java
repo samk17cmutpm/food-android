@@ -10,7 +10,8 @@ import startupordie.food.lib.SmartFragmentStatePagerAdapter;
  */
 public class FoodsPagerAdapter extends SmartFragmentStatePagerAdapter {
     private static int NUM_ITEMS = 2;
-
+    private FoodsMostPopularPresenter foodsMostPopularPresenter;
+    private FoodsNearestPresenter foodsNearestPresenter;
     public FoodsPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
     }
@@ -24,11 +25,18 @@ public class FoodsPagerAdapter extends SmartFragmentStatePagerAdapter {
     // Returns the fragment to display for that page
     @Override
     public Fragment getItem(int position) {
+        Fragment fragment;
         switch (position) {
             case 0: // Fragment # 0 - This will show FirstFragment
-                return FoodsCasesFragment.newInstance(0);
+                fragment = new FoodsMostPopularFragment().newInstance();
+                foodsMostPopularPresenter = new
+                        FoodsMostPopularPresenter((FoodsContract.FoodsMostPopularView) fragment);
+                return fragment;
             case 1: // Fragment # 0 - This will show FirstFragment different title
-                return FoodsCasesFragment.newInstance(1);
+                fragment = new FoodsNearestFragment().newInstance();
+                foodsNearestPresenter = new
+                        FoodsNearestPresenter((FoodsContract.FoodsNearestView) fragment);
+                return fragment;
             default:
                 return null;
         }
