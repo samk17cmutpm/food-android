@@ -17,9 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:textSize="14sp"
-        android:textColor="#000000"
+        android:textColor="@color/cardview_light_background"
+        android:background="@color/colorPrimary"
         app:pstsDividerColor="@color/background_tab_pressed"
-        app:pstsIndicatorColor="@color/colorPrimary"
+        app:pstsIndicatorColor="@color/background_tab_pressed"
         app:pstsUnderlineColor="@color/cardview_dark_background"
         app:pstsTabPaddingLeftRight="14dp" />
 
