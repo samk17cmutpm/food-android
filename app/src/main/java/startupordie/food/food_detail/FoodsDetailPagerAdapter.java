@@ -1,4 +1,4 @@
-package startupordie.food.food;
+package startupordie.food.food_detail;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -6,13 +6,13 @@ import android.support.v4.app.FragmentManager;
 import startupordie.food.lib.SmartFragmentStatePagerAdapter;
 
 /**
- * Created by samnguyen on 25/04/2016.
+ * Created by samnguyen on 27/04/2016.
  */
-public class FoodsPagerAdapter extends SmartFragmentStatePagerAdapter {
+public class FoodsDetailPagerAdapter extends SmartFragmentStatePagerAdapter {
     private static int NUM_ITEMS = 2;
-    private FoodsMostPopularPresenter foodsMostPopularPresenter;
-    private FoodsNearestPresenter foodsNearestPresenter;
-    public FoodsPagerAdapter(FragmentManager fragmentManager) {
+    private FoodsDetailInfoPresenter foodsDetailInfoPresenter;
+    private FoodsDetailMapPresenter foodsDetailMapPresenter;
+    public FoodsDetailPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
     }
 
@@ -28,14 +28,14 @@ public class FoodsPagerAdapter extends SmartFragmentStatePagerAdapter {
         Fragment fragment;
         switch (position) {
             case 0: // Fragment # 0 - This will show FirstFragment
-                fragment = new FoodsMostPopularFragment().newInstance();
-                foodsMostPopularPresenter = new
-                        FoodsMostPopularPresenter((FoodsContract.FoodsMostPopularView) fragment);
+                fragment = new FoodsDetailInfoFragment().newInstance();
+                foodsDetailInfoPresenter = new
+                        FoodsDetailInfoPresenter((FoodsDetailsContract.FoodsDetailInfoView) fragment);
                 return fragment;
             case 1: // Fragment # 0 - This will show FirstFragment different title
-                fragment = new FoodsNearestFragment().newInstance();
-                foodsNearestPresenter = new
-                        FoodsNearestPresenter((FoodsContract.FoodsNearestView) fragment);
+                fragment = new FoodsDetailMapFragment().newInstance();
+                foodsDetailMapPresenter = new
+                        FoodsDetailMapPresenter((FoodsDetailsContract.FoodsDetailMapView) fragment);
                 return fragment;
             default:
                 return null;
@@ -48,10 +48,10 @@ public class FoodsPagerAdapter extends SmartFragmentStatePagerAdapter {
         String title = "";
         switch (position) {
             case 0:
-                title = "Most Popular";
+                title = "Details";
                 break;
             case 1:
-                title = "Near By";
+                title = "Map";
                 break;
         }
         return title;

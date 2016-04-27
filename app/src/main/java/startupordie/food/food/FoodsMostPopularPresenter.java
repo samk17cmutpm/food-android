@@ -30,6 +30,11 @@ public class FoodsMostPopularPresenter implements  FoodsContract.FoodsMostPopula
         foodsMostPopularView.showData(foods);
     }
 
+    @Override
+    public void loadFoodsDetail(Food food) {
+        foodsMostPopularView.showFoodsDetail(food);
+    }
+
     @SuppressLint("LongLogTag")
     @Override
     public void start() {

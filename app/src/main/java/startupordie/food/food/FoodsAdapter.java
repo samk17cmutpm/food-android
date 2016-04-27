@@ -15,7 +15,21 @@ import startupordie.food.data.Food;
  * Created by samnguyen on 25/04/2016.
  */
 public class FoodsAdapter extends RecyclerView.Adapter<FoodsAdapter.ViewHolder> {
+
     private List<Food> foods;
+
+
+    private static OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(View itemVIew, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -23,9 +37,19 @@ public class FoodsAdapter extends RecyclerView.Adapter<FoodsAdapter.ViewHolder> 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView tvDistance;
-        public ViewHolder(View v) {
-            super(v);
-            tvDistance = (TextView) v.findViewById(R.id.tv_distance);
+        public ViewHolder(final View itemView) {
+            super(itemView);
+            tvDistance = (TextView) itemView.findViewById(R.id.tv_distance);
+
+            // attach events here
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        listener.onItemClick(itemView, getLayoutPosition());
+                    }
+                }
+            });
         }
     }
 

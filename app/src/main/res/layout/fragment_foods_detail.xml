@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="startupordie.food.food_detail.FoodsDetailFragment">
+
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        app:pstsShouldExpand="true"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="14sp"
+        android:textColor="@color/cardview_light_background"
+        android:background="@color/colorPrimary"
+        app:pstsDividerColor="@color/background_tab_pressed"
+        app:pstsIndicatorColor="@color/background_tab_pressed"
+        app:pstsUnderlineColor="@color/cardview_dark_background"
+        app:pstsTabPaddingLeftRight="14dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:layout_gravity="center" />
+
+</FrameLayout>

@@ -23,7 +23,6 @@ import startupordie.food.hotel.HotelsContract;
 import startupordie.food.hotel.HotelsFragment;
 import startupordie.food.hotel.HotelsPresenter;
 import startupordie.food.util.ActivityUtils;
-import android.support.v4.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -67,14 +66,14 @@ public class MainActivity extends AppCompatActivity
         switch (categories) {
             case FOODS:
                 fragment = new FoodsFragment().newInstance();
-                ActivityUtils.addFragmentToActivity(
+                ActivityUtils.addFragmentsToActivity(
                             getSupportFragmentManager(), fragment, R.id.contentFrame
                 );
                 foodsPresenter = new FoodsPresenter((FoodsContract.View) fragment);
                 break;
             case HOTELS:
                 fragment = new HotelsFragment().newInstance();
-                ActivityUtils.addFragmentToActivity(
+                ActivityUtils.addFragmentsToActivity(
                             getSupportFragmentManager(), fragment, R.id.contentFrame
                 );
                 hotelsPresenter = new HotelsPresenter((HotelsContract.View) fragment);

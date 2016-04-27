@@ -25,11 +25,15 @@ public interface FoodsContract {
     interface FoodsMostPopularView extends BaseView<FoodsMostPopularBasePresenter> {
 
         void showData(List<Food> foods);
+
+        void showFoodsDetail(Food food);
     }
 
     interface FoodsMostPopularBasePresenter extends BasePrensenter {
 
         void loadFoodsMostPopularData();
+
+        void loadFoodsDetail(Food food);
     }
 
     interface FoodsNearestView extends BaseView<FoodsNearestBasePresenter> {
