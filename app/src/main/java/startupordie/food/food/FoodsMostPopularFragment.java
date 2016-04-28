@@ -16,6 +16,7 @@ import java.util.List;
 import startupordie.food.R;
 import startupordie.food.data.Food;
 import startupordie.food.food_detail.FoodsDetailActivity;
+import startupordie.food.food_popular.FoodsPopularActivity;
 
 
 public class FoodsMostPopularFragment extends Fragment
@@ -75,7 +76,7 @@ public class FoodsMostPopularFragment extends Fragment
 
     @Override
     public void showFoodsDetail(Food food) {
-        Intent intent = new Intent(getContext(), FoodsDetailActivity.class);
+        Intent intent = new Intent(getContext(), FoodsPopularActivity.class);
         startActivity(intent);
     }
 

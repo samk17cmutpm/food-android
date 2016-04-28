@@ -21,6 +21,10 @@
         <activity
             android:name=".food_detail.FoodsDetailActivity"
             android:label="@string/title_activity_foods_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".food_popular.FoodsPopularActivity"
+            android:label="@string/title_activity_foods_popular"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
