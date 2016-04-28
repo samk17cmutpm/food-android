@@ -1,6 +1,7 @@
 package startupordie.food.food_popular;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import startupordie.food.R;
 import startupordie.food.data.Restaurant;
+import startupordie.food.restaurant.RestaurantsActivity;
 
 
 public class FoodsPopularFragment extends Fragment implements FoodsPopularContract.View{
@@ -47,7 +49,7 @@ public class FoodsPopularFragment extends Fragment implements FoodsPopularContra
     }
 
     @Override
-    public void showRestaurants(List<Restaurant> restaurants) {
+    public void showRestaurants(final List<Restaurant> restaurants) {
         recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
@@ -57,9 +59,15 @@ public class FoodsPopularFragment extends Fragment implements FoodsPopularContra
         foodsPopularAdapter.setOnItemClickListener(new FoodsPopularAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemVIew, int position) {
-
+                presenter.loadRestaurantDetail(restaurants.get(position));
             }
         });
+    }
+
+    @Override
+    public void showRestaurantDetail(Restaurant restaurant) {
+        Intent intent = new Intent(getContext(), RestaurantsActivity.class);
+        startActivity(intent);
     }
 
     @Override

@@ -13,9 +13,13 @@ public interface FoodsPopularContract {
 
     interface View extends BaseView<Presenter> {
         void showRestaurants(List<Restaurant> restaurants);
+
+        void showRestaurantDetail(Restaurant restaurant);
     }
 
     interface Presenter extends BasePrensenter {
         void loadRestaurants();
+
+        void loadRestaurantDetail(Restaurant restaurant);
     }
 }

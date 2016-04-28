@@ -26,6 +26,11 @@ public class FoodsPopularPresenter implements FoodsPopularContract.Presenter {
     }
 
     @Override
+    public void loadRestaurantDetail(Restaurant restaurant) {
+        foodsPopularView.showRestaurantDetail(restaurant);
+    }
+
+    @Override
     public void start() {
 
     }

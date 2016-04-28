@@ -10,4 +10,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_foods_detail">FoodsDetailActivity</string>
     <string name="title_activity_foods_popular">FoodsPopularActivity</string>
+    <string name="title_activity_restaurants">RestaurantsActivity</string>
 </resources>
