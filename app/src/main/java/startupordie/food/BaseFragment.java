@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import startupordie.food.lib.SimpleHeaderRecyclerAdapter;
 import startupordie.food.lib.SimpleRecyclerAdapter;
+import startupordie.food.restaurant.RestaurantsFoodAdapter;
 
 public abstract class BaseFragment extends Fragment {
     public static ArrayList<String> getDummyData() {
@@ -49,6 +50,10 @@ public abstract class BaseFragment extends Fragment {
 
     protected void setDummyData(ListView listView) {
         listView.setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, getDummyData()));
+    }
+
+    protected void setData(ListView listView, RestaurantsFoodAdapter restaurantsFoodAdapter) {
+        listView.setAdapter(restaurantsFoodAdapter);
     }
 
     protected void setDummyDataWithHeader(ListView listView, View headerView) {

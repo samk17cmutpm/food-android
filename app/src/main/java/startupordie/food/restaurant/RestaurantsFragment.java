@@ -21,8 +21,12 @@ import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import startupordie.food.BaseFragment;
 import startupordie.food.R;
+import startupordie.food.data.FoodsRestaurant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,7 +48,7 @@ public class RestaurantsFragment extends BaseFragment implements RestaurantsCont
     private int mFabMargin;
     private boolean mFabIsShown;
     private View root;
-
+    private ObservableListView listView;
     public RestaurantsFragment() {
         // Required empty public constructor
     }
@@ -63,7 +67,7 @@ public class RestaurantsFragment extends BaseFragment implements RestaurantsCont
         mActionBarSize = getActionBarSize();
         mImageView = root.findViewById(R.id.image);
         mOverlayView = root.findViewById(R.id.overlay);
-        ObservableListView listView = (ObservableListView) root.findViewById(R.id.list);
+        listView = (ObservableListView) root.findViewById(R.id.list);
         listView.setScrollViewCallbacks(this);
 
         // Set padding view for ListView. This is the flexible space.
@@ -76,7 +80,9 @@ public class RestaurantsFragment extends BaseFragment implements RestaurantsCont
         paddingView.setClickable(true);
 
         listView.addHeaderView(paddingView);
-        setDummyData(listView);
+
+        presenter.loadFoodsOfRestaurant();
+//        setDummyData(listView);
         mTitleView = (TextView) root.findViewById(R.id.title);
         mTitleView.setText("Sam Nguyen");
 //        setTitle(null);
@@ -99,6 +105,14 @@ public class RestaurantsFragment extends BaseFragment implements RestaurantsCont
     @Override
     public void showRestaurantDetail() {
 
+    }
+
+    @Override
+    public void showFoodsOfRestaurant(ArrayList<FoodsRestaurant> foodsRestaurants) {
+        RestaurantsFoodAdapter restaurantsFoodAdapter = new
+                RestaurantsFoodAdapter(getContext(), foodsRestaurants);
+
+        setData(listView, restaurantsFoodAdapter);
     }
 
     @Override
