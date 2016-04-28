@@ -38,9 +38,12 @@ public interface FoodsContract {
 
     interface FoodsNearestView extends BaseView<FoodsNearestBasePresenter> {
         void showData(List<Food> foods);
+        void showFoodsDetail(Food food);
     }
 
     interface FoodsNearestBasePresenter extends BasePrensenter {
         void loadFoodsNearest();
+
+        void loadFoodsDetail(Food food);
     }
 }

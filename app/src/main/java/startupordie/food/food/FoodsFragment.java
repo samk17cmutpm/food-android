@@ -55,7 +55,7 @@ public class FoodsFragment extends Fragment implements FoodsContract.View{
     }
     @Override
     public void showViewPager() {
-//        foodsAdapter = new FoodsAdapter(foods);
+//        foodsAdapter = new FoodsNearestAdapter(foods);
 //        recyclerView.setAdapter(foodsAdapter);
         ViewPager viewPager = (ViewPager) root.findViewById(R.id.viewpager);
         viewPager.setAdapter(new FoodsPagerAdapter(getFragmentManager()));

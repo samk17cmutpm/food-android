@@ -16,6 +16,6 @@ public interface FoodsPopularContract {
     }
 
     interface Presenter extends BasePrensenter {
-        void loadRestaurants(List<Restaurant> restaurants);
+        void loadRestaurants();
     }
 }

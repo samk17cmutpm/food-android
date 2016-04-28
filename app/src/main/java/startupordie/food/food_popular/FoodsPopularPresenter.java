@@ -1,5 +1,6 @@
 package startupordie.food.food_popular;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import startupordie.food.data.Restaurant;
@@ -14,7 +15,13 @@ public class FoodsPopularPresenter implements FoodsPopularContract.Presenter {
         this.foodsPopularView.setPrensenter(this);
     }
     @Override
-    public void loadRestaurants(List<Restaurant> restaurants) {
+    public void loadRestaurants() {
+
+        List<Restaurant> restaurants = new ArrayList<>();
+        for ( int i = 1; i < 10; i++) {
+            restaurants.add(new Restaurant(i + "restaureant"));
+        }
+        foodsPopularView.showRestaurants(restaurants);
 
     }
 

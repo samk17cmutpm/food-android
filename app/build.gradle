@@ -29,4 +29,5 @@ dependencies {
     compile 'com.android.support:support-v4:23.3.0'
     compile 'com.google.guava:guava:18.0'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile 'com.github.ksoichiro:android-observablescrollview:1.6.0'
 }

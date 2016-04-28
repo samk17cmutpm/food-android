@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,6 @@ import java.util.List;
 
 import startupordie.food.R;
 import startupordie.food.data.Food;
-import startupordie.food.food_detail.FoodsDetailActivity;
 import startupordie.food.food_popular.FoodsPopularActivity;
 
 
@@ -24,7 +22,7 @@ public class FoodsMostPopularFragment extends Fragment
 
     private FoodsContract.FoodsMostPopularBasePresenter presenter;
     private RecyclerView recyclerView;
-    private FoodsAdapter foodsAdapter;
+    private FoodsMostPopularAdapter foodsMostPopularAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private View root;
     private final String TAG = "FoodsMostPopularFragment";
@@ -59,10 +57,10 @@ public class FoodsMostPopularFragment extends Fragment
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        foodsAdapter = new FoodsAdapter(foods);
-        recyclerView.setAdapter(foodsAdapter);
+        foodsMostPopularAdapter = new FoodsMostPopularAdapter(foods);
+        recyclerView.setAdapter(foodsMostPopularAdapter);
         // attach event for each item in recycleview
-        foodsAdapter.setOnItemClickListener(new FoodsAdapter.OnItemClickListener() {
+        foodsMostPopularAdapter.setOnItemClickListener(new FoodsMostPopularAdapter.OnItemClickListener() {
 
             @SuppressLint("LongLogTag")
             @Override

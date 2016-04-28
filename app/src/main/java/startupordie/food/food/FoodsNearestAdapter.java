@@ -14,7 +14,7 @@ import startupordie.food.data.Food;
 /**
  * Created by samnguyen on 25/04/2016.
  */
-public class FoodsAdapter extends RecyclerView.Adapter<FoodsAdapter.ViewHolder> {
+public class FoodsNearestAdapter extends RecyclerView.Adapter<FoodsNearestAdapter.ViewHolder> {
 
     private List<Food> foods;
 
@@ -54,17 +54,17 @@ public class FoodsAdapter extends RecyclerView.Adapter<FoodsAdapter.ViewHolder> 
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public FoodsAdapter(List<Food> foods) {
+    public FoodsNearestAdapter(List<Food> foods) {
         this.foods = foods;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public FoodsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+    public FoodsNearestAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                             int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.foods_card_view, parent, false);
+                .inflate(R.layout.foods_nearest_card_view, parent, false);
         // set the view's size, margins, paddings and layout parameters
         ViewHolder vh = new ViewHolder(v);
         return vh;
