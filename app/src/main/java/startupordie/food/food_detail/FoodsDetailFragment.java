@@ -9,10 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.astuetz.PagerSlidingTabStrip;
-
 import startupordie.food.R;
 import startupordie.food.food.FoodsPagerAdapter;
+import startupordie.food.lib.SlidingTabLayout;
 
 public class FoodsDetailFragment extends Fragment implements FoodsDetailsContract.View{
     private FoodsDetailsContract.Presenter presenter;
@@ -45,10 +44,16 @@ public class FoodsDetailFragment extends Fragment implements FoodsDetailsContrac
         ViewPager viewPager = (ViewPager) root.findViewById(R.id.viewpager);
         viewPager.setAdapter(new FoodsDetailPagerAdapter(getFragmentManager()));
 
-        // Give the PagerSlidingTabStrip the ViewPager
-        PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) root.findViewById(R.id.tabs);
-        // Attach the view pager to the tab strip
-        tabsStrip.setViewPager(viewPager);
+        SlidingTabLayout slidingTabLayout = (SlidingTabLayout) root.findViewById(R.id.sliding_tabs);
+        slidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
+        slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.accent));
+        slidingTabLayout.setDistributeEvenly(true);
+        slidingTabLayout.setViewPager(viewPager);
+
+//        // Give the PagerSlidingTabStrip the ViewPager
+//        PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) root.findViewById(R.id.tabs);
+//        // Attach the view pager to the tab strip
+//        tabsStrip.setViewPager(viewPager);
     }
 
     @Override
