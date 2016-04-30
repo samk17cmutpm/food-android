@@ -23,12 +23,10 @@ import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import startupordie.food.BaseFragment;
 import startupordie.food.R;
 import startupordie.food.data.FoodsRestaurant;
-import startupordie.food.map.Main2Activity;
 import startupordie.food.map.MapActivity;
 
 /**
