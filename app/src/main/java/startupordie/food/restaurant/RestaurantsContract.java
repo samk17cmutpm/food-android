@@ -16,11 +16,15 @@ public interface RestaurantsContract {
         void showRestaurantDetail();
 
         void showFoodsOfRestaurant(ArrayList<FoodsRestaurant> foodsRestaurants);
+
+        void goToGoogleMap();
     }
 
     interface Presenter extends BasePrensenter {
         void loadRestaurantDetail();
 
         void loadFoodsOfRestaurant();
+
+        void loadGoogleMap();
     }
 }

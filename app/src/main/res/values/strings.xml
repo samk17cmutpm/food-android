@@ -11,4 +11,8 @@
     <string name="title_activity_foods_detail">FoodsDetailActivity</string>
     <string name="title_activity_foods_popular">FoodsPopularActivity</string>
     <string name="title_activity_restaurants">RestaurantsActivity</string>
+
+    <string name="title_activity_map">MapActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

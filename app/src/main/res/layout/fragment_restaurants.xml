@@ -59,5 +59,14 @@
         android:scaleType="center"
         android:layout_gravity="left|top"
         app:fab_colorNormal="@color/accentLight"
-        app:fab_colorPressed="@color/accent" />
+        app:fab_colorPressed="@color/accent"
+        android:src="@drawable/ic_restaurant_24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textView3"
+        android:layout_gravity="right|bottom" />
 </FrameLayout>

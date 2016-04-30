@@ -32,4 +32,5 @@ dependencies {
     compile 'com.github.ksoichiro:android-observablescrollview:1.6.0'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.melnykov:floatingactionbutton:1.0.7'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
 }

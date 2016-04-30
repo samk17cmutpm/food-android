@@ -28,6 +28,11 @@ public class RestaurantsPresenter implements RestaurantsContract.Presenter{
     }
 
     @Override
+    public void loadGoogleMap() {
+        restaurantView.goToGoogleMap();
+    }
+
+    @Override
     public void start() {
 
     }

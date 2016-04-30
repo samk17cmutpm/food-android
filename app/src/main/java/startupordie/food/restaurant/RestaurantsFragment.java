@@ -2,6 +2,7 @@ package startupordie.food.restaurant;
 
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ import java.util.List;
 import startupordie.food.BaseFragment;
 import startupordie.food.R;
 import startupordie.food.data.FoodsRestaurant;
+import startupordie.food.map.Main2Activity;
+import startupordie.food.map.MapActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -91,6 +94,7 @@ public class RestaurantsFragment extends BaseFragment implements RestaurantsCont
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "FAB is clicked", Toast.LENGTH_SHORT).show();
+                presenter.loadGoogleMap();
             }
         });
         mFabMargin = getResources().getDimensionPixelSize(R.dimen.margin_standard);
@@ -113,6 +117,12 @@ public class RestaurantsFragment extends BaseFragment implements RestaurantsCont
                 RestaurantsFoodAdapter(getContext(), foodsRestaurants);
 
         setData(listView, restaurantsFoodAdapter);
+    }
+
+    @Override
+    public void goToGoogleMap() {
+        Intent intent = new Intent(getContext(), MapActivity.class);
+        startActivity(intent);
     }
 
     @Override
